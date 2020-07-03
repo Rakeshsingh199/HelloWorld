@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data; 
+struct node *next;
+}typedef node *NODE;
+NODE createNode(){
+NODE temp;
+temp=malloc(sizeof(Struct node));
+temp->next=NULL;
+return temp;
+}
+NODE insertAtBegin(NODE first, int x)
+{
+NODE temp=createNode();
+temp->data=x;
+if(first==NULL)
+{
+temp->next=first;
+first=temp;
+return first;
+}
+NODE display(NODE first)
+{
+NODE temp=first;
+while(temp!=NULL)
+{
+printf("%d--> ",temp->data);
+temp=temp->next;
+
+}
+return first;
+}
+NODE count(NODE first)
+{
+NODE temp=first;
+int count=0;
+while(temp!=NULL)
+{
+count++;
+temp=temp->next;
+}
+return count;
+}
+void main()
+{
+int x,i;
+int op;
+NODE first = NULL;
+printf("Press 1 to insert at begin\n2.To count\n3.To display\n");
+printf("Enter the options: ");
+
+scanf("%d",&op);
+
+switch(op){
+case 1:
+
+printf("Enter a number at first:");
+first=insertAtBegin(first,x);
+break;
+case 2:
+printf("The count is: %d",count(first));
+break;
+case 3:
+printf("The nodes are :");
+display(first);
+break;
+case 4:
+exit(0);
+default:
+printf("You choose the wrong one dude ");
+}
+}

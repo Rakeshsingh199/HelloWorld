@@ -1,3 +1,4 @@
+/*this is a linkedlist program for testing*/
 #include<stdio.h>
 #include<stdlib.h>
 struct node{
